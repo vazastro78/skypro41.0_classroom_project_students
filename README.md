@@ -7,6 +7,7 @@
 
 ### Эволюция проекта
 - [x] Классная работа "20.1 Работа с ORM (Object-Relational Mapping) в Django"
+- [] Классная работа "20.2 Работа с шаблонами, статическими файлами, bootstrap"
 
 ### Шаг за шагом
 
@@ -19,6 +20,13 @@
  - Создаем контроллер index в views.py и страницу templates/students/index.html
  - Настраиваем админку, python manage.py createsuperuser
  - Заполнение базы данных python manage.py dumpdata и loaddata
+
+#### 20.2  Шаблонизация в Django
+
+ - Настройка статических файлов
+ - Шаблоны на основе Bootstrap
+ - Подшаблоны и базовые шаблоны
+ - Новые шаблонные теги и фильтры в templatetags/path_tag_filter.py
 
 #### создаем проект django и приложение students
 
@@ -52,7 +60,10 @@ git push -u origin main
 
 
 git checkout -b 20_1_classroom #создаем и переключаемся на новую ветку
+git checkout main
+git merge 20_1_classroom
 
+git checkout -b 20_2_classroom_templates
 
 #git remote remove origin
 #git clone  git@github.com:vazastro78/skypro41.0_classroom_project_students.git

@@ -1,11 +1,14 @@
 from django.shortcuts import render
 
+from students.models import Student
+
 # Create your views here.
 
 def index(request):
-    if request.method == 'POST':
-        username = request.POST.get("username")
-        email = request.POST.get("email")
-        message = request.POST.get("message")
-        print( f'{username} ({email},{message})')
-    return render(request, 'students/index.html')
+    students = Student.objects.all()
+
+    context = {
+        'student_list': students
+    }
+
+    return render(request, 'students/mainpage.html', context)
