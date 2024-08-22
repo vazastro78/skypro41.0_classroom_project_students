@@ -19,6 +19,12 @@
  pip3 freeze > requirements.txt #записываем зависимости
 ```
 
+```bash
+python3 manage.py startapp students
+touch students/urls.py
+mkdir -p students/templates/students
+mkdir -p static/css static/js static/images
+```
 
 #### github
 
