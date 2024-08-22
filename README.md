@@ -13,6 +13,8 @@
 #### 20.1 Работа с ORM (Object-Relational Mapping) в Django
 
  - Настройка работы с базой данных  СУБД PostgreSQL
+ - Создаем модель в Django для класса студент (class Student)
+ - Создаем миграцию и применяем миграцию с номером 0001
 
 #### создаем проект django и приложение students
 
@@ -45,7 +47,7 @@ git branch -M main
 git push -u origin main
 
 
-git checkout -b 20_1_classroom
+git checkout -b 20_1_classroom #создаем и переключаемся на новую ветку
 
 
 #git remote remove origin
