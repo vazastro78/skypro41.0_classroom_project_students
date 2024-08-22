@@ -18,6 +18,7 @@
  - Настраиваем пути в urls.py, MEDIA_URL и MEDIA_ROOT
  - Создаем контроллер index в views.py и страницу templates/students/index.html
  - Настраиваем админку, python manage.py createsuperuser
+ - Заполнение базы данных python manage.py dumpdata и loaddata
 
 #### создаем проект django и приложение students
 
