@@ -1,0 +1,27 @@
+{% extends 'students/base.html' %}
+{% load path_tag_filter %}
+{% block content_SingleStudentCard %}
+
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-bg-primary border-primary">
+            <h4 class="my-0 fw-normal">{{student_item.first_name}} {{student_item.last_name}}</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-body-secondary fw-light"> Студент</small></h1>
+              Имя: {{student_item.first_name}}<br>
+              Фамилия: {{student_item.last_name}}<br>
+              <img src="{{"python/Minduka_Present_Blue_Pack.png"|mediapath}}" alt="Present"><br>
+              <img width="50px" src="{% get_media_prefix "python/Minduka_Present_Blue_Pack.png" %}" alt="Present"><br>
+            {% if student_item.is_active %}
+            <button type="button" class="w-100 btn btn-lg btn-primary">Подробнее ...</button>
+            {% else%}
+            <button type="button" class="w-100 btn btn-lg btn-danger">Подробнее ...</button>
+            {%endif%}
+
+
+          </div>
+        </div>
+      </div>
+
+{% endblock %}
