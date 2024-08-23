@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from students.models import Student
 
 # Create your views here.
 
-def index(request):
+def student_list(request):
     students = Student.objects.all()
 
     context = {
@@ -12,3 +12,13 @@ def index(request):
     }
 
     return render(request, 'students/mainpage.html', context)
+
+def student_detail(request, pk):
+    student = get_object_or_404(Student,pk=pk)
+
+
+    context = {
+        'student_item': student
+    }
+
+    return render(request, 'students/student_detail.html', context)
