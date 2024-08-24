@@ -9,7 +9,7 @@ class Material(models.Model):
     body = models.TextField(verbose_name='содержимое')
 
     def _str__(self):
-        return self.title
+        return f"{self.title} {self.body}"
 
     class Meta:
         verbose_name = 'материал'

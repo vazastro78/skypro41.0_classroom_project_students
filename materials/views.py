@@ -1,5 +1,5 @@
+from django.views.generic import CreateView, ListView, DetailView
 
-from django.views.generic import ListView, CreateView
 from django.urls import reverse_lazy, reverse
 
 from materials.models import Material
@@ -24,5 +24,13 @@ class MaterialCreateView(CreateView):
     def get_success_url(self):
         return reverse_lazy('materials:list')
 
+
+
+class MaterialDetailView(DetailView):
+    model = Material
+    extra_context = {
+        'title': 'Страница просмотра отдельного материала'
+    }
+    template_name = 'materials/materials_view_single.html'
 
 
