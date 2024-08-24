@@ -16,6 +16,11 @@ class MaterialListView(ListView):
 
     model = Material
 
+    def get_queryset(self, *args, **kwargs):
+        queryset = super().get_queryset(*args, **kwargs)
+        queryset = queryset.filter(is_published=True)
+        return queryset
+
 class MaterialCreateView(CreateView):
     model = Material
     fields = ( 'title', 'body',)
@@ -26,7 +31,7 @@ class MaterialCreateView(CreateView):
 
 class MaterialUpdateView(UpdateView):
     model = Material
-    fields = ( 'title', 'body',)
+    fields = ( 'title', 'body', 'is_published', )
     template_name = 'materials/materials_update_single.html'
 
     extra_context = {
