@@ -8,7 +8,8 @@
 ### Эволюция проекта
 - [x] Классная работа "20.1 Работа с ORM (Object-Relational Mapping) в Django"
 - [x] Классная работа "20.2 Работа с шаблонами, статическими файлами, шаблоном bootstrap"
-- [?] Классная работа "21.1 Работа FBV (function based views) и CBV (class based views)"
+- [x] Классная работа "21.1 Работа FBV (function based views) и CBV (class based views)"
+  - комментарий: реализован CRUD только для materials, но для students не реализован.
 
 ### Шаг за шагом
 
