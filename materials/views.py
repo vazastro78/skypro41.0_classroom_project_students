@@ -1,6 +1,7 @@
 from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
 
 from django.urls import reverse_lazy, reverse
+from pytils.translit import slugify
 
 from materials.models import Material
 
@@ -29,6 +30,15 @@ class MaterialCreateView(CreateView):
     def get_success_url(self):
         return reverse_lazy('materials:list')
 
+    def form_valid(self, form):
+        if form.is_valid():
+            new_material = form.save()
+            new_material.slug = slugify(new_material.title)
+            new_material.save()
+        return super().form_valid(form)
+
+
+
 class MaterialUpdateView(UpdateView):
     model = Material
     fields = ( 'title', 'body', 'is_published', )
@@ -40,6 +50,12 @@ class MaterialUpdateView(UpdateView):
     def get_success_url(self):
         return reverse_lazy('materials:view_single',args=[self.kwargs.get('pk')])
 
+    def form_valid(self, form):
+        if form.is_valid():
+            new_material = form.save()
+            new_material.slug = slugify(new_material.title)
+            new_material.save()
+        return super().form_valid(form)
 
 
 class MaterialDetailView(DetailView):
