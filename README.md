@@ -37,7 +37,7 @@
  - MaterialListView и MaterialCreateView для просмотра всего списка и создания одного элемента
  - MaterialDetailView для просмотра одного элемента
  - MaterialDeleteView для удаления одного элемента (с подтверждением)
- - 
+ - MaterialUpdateView для изменения одного элемента
 
 
 #### создаем проект django и приложение students

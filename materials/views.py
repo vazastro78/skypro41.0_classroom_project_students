@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView, DetailView, DeleteView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
 
 from django.urls import reverse_lazy, reverse
 
@@ -23,6 +23,17 @@ class MaterialCreateView(CreateView):
 
     def get_success_url(self):
         return reverse_lazy('materials:list')
+
+class MaterialUpdateView(UpdateView):
+    model = Material
+    fields = ( 'title', 'body',)
+    template_name = 'materials/materials_update_single.html'
+
+    extra_context = {
+        'title': 'Страница изменения отдельного материала'
+    }
+    def get_success_url(self):
+        return reverse_lazy('materials:view_single',args=[self.kwargs.get('pk')])
 
 
 
