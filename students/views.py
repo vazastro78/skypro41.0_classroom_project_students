@@ -1,24 +1,18 @@
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView, DetailView
 
 from students.models import Student
 
 # Create your views here.
 
-def student_list(request):
-    students = Student.objects.all()
+#CBV
+class StudentListView(ListView):
+    model = Student
+    template_name = 'students/mainpage.html'
 
-    context = {
-        'student_list': students
-    }
-
-    return render(request, 'students/mainpage.html', context)
-
-def student_detail(request, pk):
-    student = get_object_or_404(Student,pk=pk)
+#CBV
+class StudentDetailView(DetailView):
+    model = Student
+    template_name = 'students/student_detail.html'
 
 
-    context = {
-        'student_item': student
-    }
-
-    return render(request, 'students/student_detail.html', context)
