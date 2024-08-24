@@ -34,7 +34,7 @@
 
  - Добавляем для students методы ListView и  DetailView в парадигме CRUD 
 > CRUD (create, read, update, delete) — механизм, который реализует простой функционал создания, просмотра, обновления и удаления сущностей.
- - next
+ - MaterialListView и MaterialCreateView для просмотра всего списка и создания одного элемента
  - 
 
 #### создаем проект django и приложение students
