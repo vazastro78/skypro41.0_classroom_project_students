@@ -43,6 +43,11 @@ class MaterialDetailView(DetailView):
         'title': 'Страница просмотра отдельного материала'
     }
     template_name = 'materials/materials_view_single.html'
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        self.object.views_count += 1
+        self.object.save()
+        return self.object
 
 class MaterialDeleteView(DeleteView):
     model = Material
