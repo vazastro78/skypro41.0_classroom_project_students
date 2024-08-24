@@ -1,0 +1,16 @@
+{% extends 'materials/base.html' %}
+{% block content_SingleMaterialCard %}
+ <div class="row">
+      <div class="col-12">
+
+          <form method="post">
+	        {% csrf_token %}
+             <p>Действительно хотите удалить данный элемент:</p>
+              <p> <b>{{object.title}} </b> </p>
+              <button type="submit" class="btn btn-success">Подтвердить</button>
+              <a href="{% url 'materials:list' %}" class="btn btn-success btn-warning">Отмена</a>
+          </form>
+
+      </div>
+ </div>
+{% endblock %}
